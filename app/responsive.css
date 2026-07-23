@@ -1,0 +1,503 @@
+/*
+ * Final responsive layer.
+ * Keep this stylesheet imported last so it can safely correct desktop-first
+ * component rules without changing any feature-specific styling.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  max-width: 100%;
+  overflow-x: clip;
+}
+body {
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+}
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+.dashboard-v2 *,
+.admin-v2 *,
+.public-v2 * {
+  min-width: 0;
+}
+.dashboard-v2 .dash-content,
+.admin-v2 > section {
+  width: 100%;
+}
+
+/* Fluid workspace and administration layouts. */
+@media (max-width: 1200px) {
+  .dashboard-v2,
+  .admin-v2,
+  html[data-admin-layout="right"] .admin-v2 {
+    display: block;
+  }
+
+  .dashboard-v2 .dash-nav,
+  .admin-v2 > aside,
+  html[data-admin-layout="right"] .admin-v2 > aside {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .dashboard-v2 .dash-nav,
+  .admin-v2 > aside {
+    padding: 1rem clamp(1rem, 4vw, 2.5rem);
+  }
+
+  .dashboard-v2 .dash-nav nav,
+  .admin-v2 > aside nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.45rem;
+    margin: 0.9rem 0 0;
+    padding-bottom: 0.35rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+  }
+
+  .dashboard-v2 .dash-nav nav button,
+  .admin-v2 > aside nav a {
+    flex: 0 0 auto;
+    min-width: 136px;
+    min-height: 48px;
+  }
+
+  .dashboard-v2 .dash-user {
+    display: flex;
+    width: min(100%, 330px);
+    margin: 0.85rem 0 0;
+    padding: 0.7rem 0;
+  }
+
+  .dashboard-v2 .dash-bottom {
+    display: none;
+  }
+  .admin-v2 > aside > p {
+    margin: 0.8rem 0 0;
+  }
+  .admin-v2 > aside .admin-profile-link {
+    width: min(100%, 340px);
+  }
+  .admin-v2 > aside > a:last-child {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 0.75rem;
+  }
+
+  .dashboard-v2 .dash-content,
+  .admin-v2 > section {
+    padding: 1.75rem clamp(1rem, 4vw, 3rem) 4rem;
+  }
+
+  .dashboard-v2 .start-panel,
+  .dashboard-v2 .two-column,
+  .dashboard-v2 .projects-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dashboard-v2 .checklist {
+    grid-row: auto;
+  }
+  .dashboard-v2 .case-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .admin-v2 .admin-metrics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-v2 .dash-top,
+  .admin-v2 > section > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dashboard-v2 .share-actions,
+  .admin-v2 .admin-header-actions {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-v2 .share-actions > *,
+  .admin-v2 .admin-header-actions > * {
+    flex: 1 1 150px;
+  }
+  .admin-v2 .admin-header-actions .admin-layout-switcher {
+    flex-basis: 100%;
+  }
+
+  .dashboard-v2 .metric-grid,
+  .dashboard-v2 .analytics-lists,
+  .admin-v2 .admin-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-v2 .form-row,
+  .dashboard-v2 .profile-editor-fields,
+  .dashboard-v2 .profile-editor-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dashboard-v2 .form-row:has(input[type="color"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .dashboard-v2 .profile-introduction {
+    grid-column: auto;
+  }
+
+  .admin-v2 .admin-directory > div:first-child {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .admin-v2 .admin-directory label {
+    width: 100%;
+  }
+
+  .dashboard-v2 .analytics-chart > div:last-child,
+  .admin-v2 .admin-growth > div:last-child {
+    height: clamp(170px, 34vw, 240px);
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .auth-shell {
+    grid-template-columns: 1fr;
+  }
+  .auth-story {
+    min-height: 360px;
+  }
+  .auth-panel {
+    min-height: auto;
+  }
+  .guide-faq {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phone layout: no sideways scrolling, card-based tables and full-width forms. */
+@media (max-width: 680px) {
+  body {
+    min-width: 0;
+  }
+
+  .dashboard-v2 .dash-nav,
+  .admin-v2 > aside {
+    padding: 0.85rem 1rem;
+  }
+  .dashboard-v2 .dash-user {
+    width: 100%;
+  }
+  .dashboard-v2 .dash-nav nav button,
+  .admin-v2 > aside nav a {
+    min-width: 122px;
+  }
+  .dashboard-v2 .dash-nav nav button small {
+    display: none;
+  }
+
+  .dashboard-v2 .dash-content,
+  .admin-v2 > section {
+    padding: 1.15rem 1rem 3rem;
+  }
+  .dashboard-v2 .dash-top h1,
+  .admin-v2 header h1 {
+    font-size: clamp(2.65rem, 15vw, 4rem);
+  }
+
+  .dashboard-v2 .share-actions > *,
+  .admin-v2 .admin-header-actions > * {
+    flex: 1 1 100%;
+  }
+  .dashboard-v2 .share-actions a,
+  .dashboard-v2 .share-actions button,
+  .admin-v2 .admin-header-actions a,
+  .admin-v2 .admin-header-actions button {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard-v2 .welcome-v2,
+  .dashboard-v2 .editor-card,
+  .dashboard-v2 .enquiries-workspace,
+  .admin-v2 .editor-card,
+  .admin-v2 .admin-directory {
+    padding: 1rem;
+    border-radius: 13px;
+  }
+  .dashboard-v2 .welcome-v2 {
+    min-height: 0;
+  }
+  .dashboard-v2 .welcome-v2 h2 {
+    font-size: clamp(2.8rem, 16vw, 4.25rem);
+  }
+  .dashboard-v2 .welcome-v2 > div {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .dashboard-v2 .metric-grid,
+  .dashboard-v2 .analytics-lists,
+  .admin-v2 .admin-metrics,
+  .dashboard-v2 .case-fields,
+  .dashboard-v2 .form-row:has(input[type="color"]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dashboard-v2 .metric-grid article,
+  .admin-v2 .admin-metrics article {
+    min-height: 120px;
+  }
+
+  .dashboard-v2 .simple-list article,
+  .dashboard-v2 .grouped-list article,
+  .dashboard-v2 .asset-summary article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .dashboard-v2 .skill-editor-list article {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+  .dashboard-v2 .skill-editor-list article > button {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+  .dashboard-v2 .project-editor-list article > div:last-child,
+  .dashboard-v2 .inbox-actions {
+    flex-wrap: wrap;
+  }
+
+  .dashboard-v2 .enquiries-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .dashboard-v2 .enquiries-layout-switcher {
+    display: flex;
+    width: 100%;
+  }
+  .dashboard-v2 .enquiries-layout-switcher button {
+    flex: 1;
+  }
+  .dashboard-v2 .enquiries-summary {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .dashboard-v2 .enquiries-summary small {
+    width: 100%;
+    margin-left: 0;
+  }
+  .dashboard-v2 .enquiries-collection.layout-list .enquiry-item {
+    display: flex;
+  }
+  .dashboard-v2 .inbox-actions > * {
+    flex: 1 1 110px;
+    text-align: center;
+  }
+
+  .admin-v2 .admin-directory {
+    padding: 0;
+    overflow: visible;
+  }
+  .admin-v2 .admin-directory > div:first-child {
+    padding: 1rem;
+  }
+  .admin-v2 .admin-table {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0 0.75rem 0.75rem;
+    overflow: visible;
+  }
+  .admin-v2 .admin-row-head {
+    display: none;
+  }
+  .admin-v2 .admin-row {
+    display: grid;
+    min-width: 0;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.8rem;
+    padding: 1rem;
+    border: 1px solid var(--ui-border, #d5d8d1);
+    border-radius: 11px;
+  }
+  .admin-v2 .admin-row > div {
+    grid-column: 1 / -1;
+  }
+  .admin-v2 .admin-row > span {
+    overflow-wrap: anywhere;
+  }
+  .admin-v2 .admin-row > span:nth-child(2)::before {
+    content: "Verification: ";
+    font-weight: 800;
+  }
+  .admin-v2 .admin-row > span:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+  .admin-v2 .admin-row > span:nth-child(4)::before {
+    content: "Last login: ";
+    font-weight: 800;
+  }
+  .admin-v2 .admin-row > a,
+  .admin-v2 .admin-row > span:last-child {
+    justify-self: end;
+  }
+  .admin-v2 .admin-activity article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-modal,
+  .qr-dialog {
+    align-items: end;
+    padding: 0;
+  }
+  .admin-modal form,
+  .qr-dialog > div {
+    width: 100%;
+    max-height: 92dvh;
+    padding: 1.25rem;
+    overflow-y: auto;
+    border-radius: 18px 18px 0 0;
+  }
+  .admin-modal h2 {
+    padding-right: 2rem;
+    font-size: 2.15rem;
+  }
+
+  .auth-panel {
+    padding: 2.5rem 1rem;
+  }
+  .auth-story {
+    min-height: 300px;
+    padding: 2rem 1rem;
+  }
+  .auth-field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-page > nav,
+  .guide-page > footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .guide-page > header {
+    padding: 4rem 1rem;
+  }
+  .guide-page header h1 {
+    font-size: clamp(3.2rem, 17vw, 4.7rem);
+  }
+  .guide-steps {
+    padding: 3rem 1rem;
+  }
+  .guide-steps article {
+    grid-template-columns: 32px minmax(0, 1fr);
+  }
+  .guide-faq {
+    padding: 3rem 1rem;
+  }
+
+  .public-v2 .public-nav {
+    padding-inline: 1rem;
+  }
+  .public-v2 .public-nav-actions {
+    width: 100%;
+  }
+  .public-v2 .public-hero,
+  .public-v2 .intro-video,
+  .public-v2 .public-section,
+  .public-v2 .public-contact {
+    padding: 3.5rem 1rem;
+  }
+  .public-v2 .public-hero-copy h1,
+  .public-v2.theme-editorial .public-hero-copy h1,
+  .public-v2.theme-spatial .public-hero-copy h1 {
+    overflow-wrap: anywhere;
+    font-size: clamp(3.25rem, 18vw, 5.2rem);
+  }
+  .public-v2 .public-actions > *,
+  .public-v2 .public-links > * {
+    flex: 1 1 135px;
+    text-align: center;
+  }
+  .public-v2 .case-body {
+    padding: 1rem;
+  }
+  .public-v2 .case-body h3 {
+    font-size: clamp(2rem, 12vw, 3rem);
+    overflow-wrap: anywhere;
+  }
+  .public-v2 .public-footer {
+    padding-inline: 1rem;
+  }
+
+  .toast-viewport {
+    inset: auto 0.75rem 0.75rem;
+    width: auto;
+  }
+  .toast {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-v2 .dash-nav nav button,
+  .admin-v2 > aside nav a {
+    min-width: 108px;
+  }
+  .dashboard-v2 .card-heading h2,
+  .admin-v2 .card-heading h2,
+  .dashboard-v2 .enquiries-heading h2 {
+    font-size: 1.85rem;
+  }
+  .dashboard-v2 .metric-grid strong,
+  .admin-v2 .admin-metrics strong {
+    font-size: 2.5rem;
+  }
+  .public-v2 .public-nav-actions {
+    grid-template-columns: 1fr;
+  }
+  .public-v2 .public-theme-switcher {
+    grid-column: auto;
+  }
+  .cv-dialog header {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,660 @@
+.workspace-theme-toggle {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.68rem 0.9rem;
+  border: 1px solid #aeb4ab;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #151b24;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.workspace-theme-toggle span {
+  color: #17694f;
+  font-size: 1rem;
+}
+
+.workspace-theme-toggle strong {
+  font-size: inherit;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.admin-header-actions > a {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #aeb4ab;
+  border-radius: 999px;
+  color: #151b24;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.admin-header-actions > button {
+  min-height: 42px;
+  padding: 0.68rem 0.9rem;
+  border: 1px solid #aeb4ab;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #151b24;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.admin-header-actions > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.admin-v2 > aside > .admin-profile-link {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  margin: 0.35rem 0;
+  border-block: 1px solid #26334a;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.admin-layout-switcher {
+  flex: 0 0 auto;
+}
+
+/* Administration supports left sidebar, top navigation and right sidebar. */
+html[data-admin-layout="right"] .admin-v2 {
+  grid-template-columns: minmax(0, 1fr) 270px;
+}
+
+html[data-admin-layout="right"] .admin-v2 > aside {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+html[data-admin-layout="right"] .admin-v2 > section {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+html[data-admin-layout="top"] .admin-v2 {
+  display: block;
+}
+
+html[data-admin-layout="top"] .admin-v2 > aside {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  height: auto;
+  min-height: 0;
+  grid-template-columns: auto auto minmax(220px, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 3vw;
+}
+
+html[data-admin-layout="top"] .admin-v2 > aside > p {
+  display: none;
+}
+html[data-admin-layout="top"] .admin-v2 > aside > .admin-profile-link {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html[data-admin-layout="top"] .admin-v2 > aside nav {
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.4rem;
+}
+html[data-admin-layout="top"] .admin-v2 > aside nav a,
+html[data-admin-layout="top"] .admin-v2 > aside > a {
+  padding: 0.55rem 0;
+  border: 0;
+}
+
+.admin-v2 header p,
+.admin-directory p,
+.admin-directory label span,
+.admin-metrics span {
+  font-size: 0.72rem;
+}
+.admin-v2 aside nav a,
+.admin-v2 aside > a {
+  font-size: 0.78rem;
+}
+.admin-metrics strong {
+  font-size: 3.15rem;
+}
+.admin-row {
+  font-size: 0.8rem;
+}
+.admin-row small,
+.admin-row > a {
+  font-size: 0.72rem;
+}
+.admin-activity p,
+.admin-activity article > span {
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 980px) {
+  html[data-admin-layout="right"] .admin-v2,
+  html[data-admin-layout="top"] .admin-v2 {
+    display: block;
+  }
+  html[data-admin-layout="right"] .admin-v2 > aside,
+  html[data-admin-layout="top"] .admin-v2 > aside {
+    display: flex;
+    height: auto;
+  }
+  html[data-admin-layout="top"] .admin-v2 > aside nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+}
+
+.admin-profile-avatar {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #66e3c4;
+  background-position: center;
+  background-size: cover;
+  color: #07111f;
+  font-size: 0.85rem;
+  font-weight: 850;
+}
+
+.admin-profile-link > span:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.admin-profile-link strong {
+  overflow: hidden;
+  font-size: 0.82rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-profile-link small {
+  color: #9da9b9;
+  font-size: 0.62rem;
+}
+
+.admin-profile-link:hover strong {
+  color: #66e3c4;
+}
+
+.admin-growth > div:last-child {
+  overflow: hidden;
+}
+
+.admin-growth > div:last-child span {
+  max-height: 100%;
+}
+
+.dashboard-v2 .dash-user {
+  width: 100%;
+  border-right: 0;
+  border-left: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.dashboard-v2 .dash-user > b {
+  background-position: center;
+  background-size: cover;
+}
+
+.dashboard-v2 .dash-user:hover strong {
+  color: #66e3c4;
+}
+
+.admin-row > a {
+  color: #17694f;
+  font-size: 0.62rem;
+  font-weight: 750;
+}
+
+.admin-user-editor-grid {
+  margin-top: 1rem;
+}
+
+.admin-detail-tabs {
+  display: flex;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  padding: 0.4rem;
+  overflow-x: auto;
+  border: 1px solid #d5d8d1;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.admin-detail-tabs button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.85rem;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #39434f;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.admin-detail-tabs button small {
+  display: grid;
+  min-width: 20px;
+  min-height: 20px;
+  place-items: center;
+  border-radius: 999px;
+  background: #edf1ed;
+  font-size: 0.6rem;
+}
+
+.admin-detail-tabs button.is-active {
+  background: #07111f;
+  color: #fff;
+}
+.admin-detail-tabs button.is-active small {
+  background: #66e3c4;
+  color: #07111f;
+}
+.admin-detail-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid #d5d8d1;
+  border-left: 1px solid #d5d8d1;
+}
+
+.admin-facts-grid > div {
+  min-height: 92px;
+  padding: 0.9rem;
+  overflow-wrap: anywhere;
+  border-right: 1px solid #d5d8d1;
+  border-bottom: 1px solid #d5d8d1;
+}
+
+.admin-facts-grid dt {
+  margin-bottom: 0.45rem;
+  color: #70766f;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.admin-facts-grid dd {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+.admin-facts-grid dd em {
+  color: #9a5c41;
+  font-style: normal;
+}
+.admin-facts-grid dd a {
+  color: #17694f;
+  font-weight: 700;
+}
+.admin-facts-grid dd code {
+  white-space: normal;
+}
+.admin-records {
+  display: grid;
+  gap: 0.85rem;
+}
+.admin-records > article {
+  padding: 1rem;
+  border: 1px solid #d5d8d1;
+  border-radius: 12px;
+}
+.admin-records > article .admin-facts-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[data-workspace-theme="dark"] .admin-detail-tabs,
+html[data-workspace-theme="dark"] .admin-records > article {
+  border-color: #35465a;
+  background: #101c2d;
+}
+html[data-workspace-theme="dark"] .admin-detail-tabs button {
+  color: #c8d2df;
+}
+html[data-workspace-theme="dark"] .admin-detail-tabs button.is-active {
+  background: #66e3c4;
+  color: #07111f;
+}
+html[data-workspace-theme="dark"] .admin-facts-grid,
+html[data-workspace-theme="dark"] .admin-facts-grid > div {
+  border-color: #35465a;
+}
+html[data-workspace-theme="dark"] .admin-facts-grid dt {
+  color: #9dafc2;
+}
+html[data-workspace-theme="dark"] .admin-facts-grid dd a {
+  color: #7af0d2;
+}
+html[data-workspace-theme="dark"] .admin-facts-grid dd em {
+  color: #f0ad90;
+}
+
+@media (max-width: 900px) {
+  .admin-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .admin-facts-grid,
+  .admin-records > article .admin-facts-grid {
+    grid-template-columns: 1fr;
+  }
+  .pagination {
+    align-items: stretch;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.account-facts {
+  margin-top: 1.2rem;
+  border-top: 1px solid #d5d8d1;
+}
+
+.account-facts p {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  margin: 0;
+  border-bottom: 1px solid #d5d8d1;
+  font-size: 0.64rem;
+}
+
+.account-facts span {
+  color: #70766f;
+}
+
+.compact-form .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.compact-form .checkbox-label input {
+  width: 18px;
+  min-height: 18px;
+  margin: 0;
+}
+
+.compact-form .checkbox-label span {
+  margin: 0;
+}
+
+/* Dark workspace surface */
+html[data-workspace-theme="dark"] .dashboard-v2,
+html[data-workspace-theme="dark"] .admin-v2 {
+  background: #0d1522;
+  color: #edf2f7;
+}
+
+html[data-workspace-theme="dark"] .dash-nav,
+html[data-workspace-theme="dark"] .admin-v2 > aside {
+  background: #050b14;
+  color: #f7f3ea;
+}
+
+html[data-workspace-theme="dark"] .dash-top,
+html[data-workspace-theme="dark"] .card-heading,
+html[data-workspace-theme="dark"] .checklist > button,
+html[data-workspace-theme="dark"] .simple-list article,
+html[data-workspace-theme="dark"] .grouped-list article,
+html[data-workspace-theme="dark"] .skill-editor-list article,
+html[data-workspace-theme="dark"] .project-editor-list article,
+html[data-workspace-theme="dark"] .asset-summary article,
+html[data-workspace-theme="dark"] .metric-row,
+html[data-workspace-theme="dark"] .admin-activity article,
+html[data-workspace-theme="dark"] .admin-row {
+  border-color: #2c394a;
+}
+
+html[data-workspace-theme="dark"] .welcome-v2,
+html[data-workspace-theme="dark"] .checklist,
+html[data-workspace-theme="dark"] .how-card,
+html[data-workspace-theme="dark"] .editor-card,
+html[data-workspace-theme="dark"] .metric-grid article,
+html[data-workspace-theme="dark"] .admin-metrics article,
+html[data-workspace-theme="dark"] .admin-directory,
+html[data-workspace-theme="dark"] .dashboard-v2 .inbox-list article {
+  border-color: #2c394a;
+  background: #131e2d;
+  color: #edf2f7;
+}
+
+html[data-workspace-theme="dark"] .welcome-v2 {
+  background:
+    radial-gradient(circle at 90% 15%, rgba(102, 227, 196, 0.18), transparent 16rem), #07111f;
+}
+
+html[data-workspace-theme="dark"] .dashboard-v2 .inbox-list article.is-new {
+  border-left-color: #f08a62;
+  background: #211a1c;
+}
+
+html[data-workspace-theme="dark"] .dash-top p,
+html[data-workspace-theme="dark"] .card-heading > span,
+html[data-workspace-theme="dark"] .admin-v2 header p,
+html[data-workspace-theme="dark"] .admin-directory p,
+html[data-workspace-theme="dark"] .project-editor-list article > div:first-child > span,
+html[data-workspace-theme="dark"] .project-list-copy > span,
+html[data-workspace-theme="dark"] .grouped-list h3,
+html[data-workspace-theme="dark"] .publish-state {
+  color: #98a8b9;
+}
+
+html[data-workspace-theme="dark"] .card-heading p,
+html[data-workspace-theme="dark"] .how-card span,
+html[data-workspace-theme="dark"] .checklist small,
+html[data-workspace-theme="dark"] .editor-card label > span,
+html[data-workspace-theme="dark"] .editor-card label > small,
+html[data-workspace-theme="dark"] .simple-list a,
+html[data-workspace-theme="dark"] .grouped-list article span,
+html[data-workspace-theme="dark"] .grouped-list article small,
+html[data-workspace-theme="dark"] .skill-editor-list span,
+html[data-workspace-theme="dark"] .project-editor-list p,
+html[data-workspace-theme="dark"] .project-editor-list small,
+html[data-workspace-theme="dark"] .metric-grid span,
+html[data-workspace-theme="dark"] .metric-grid small,
+html[data-workspace-theme="dark"] .admin-metrics span,
+html[data-workspace-theme="dark"] .admin-activity p,
+html[data-workspace-theme="dark"] .admin-activity article > span,
+html[data-workspace-theme="dark"] .inbox-message time,
+html[data-workspace-theme="dark"] .inbox-company,
+html[data-workspace-theme="dark"] .inbox-message > p,
+html[data-workspace-theme="dark"] .public-empty {
+  color: #9dacbd;
+}
+
+html[data-workspace-theme="dark"] .editor-card input,
+html[data-workspace-theme="dark"] .editor-card textarea,
+html[data-workspace-theme="dark"] .editor-card select,
+html[data-workspace-theme="dark"] .admin-directory input,
+html[data-workspace-theme="dark"] .admin-modal input,
+html[data-workspace-theme="dark"] .admin-modal textarea,
+html[data-workspace-theme="dark"] .admin-modal select {
+  border-color: #415066;
+  background: #0b1421;
+  color: #edf2f7;
+}
+
+html[data-workspace-theme="dark"] .editor-card input::placeholder,
+html[data-workspace-theme="dark"] .editor-card textarea::placeholder,
+html[data-workspace-theme="dark"] .admin-directory input::placeholder {
+  color: #718096;
+}
+
+html[data-workspace-theme="dark"] .share-actions a,
+html[data-workspace-theme="dark"] .admin-header-actions > a,
+html[data-workspace-theme="dark"] .admin-header-actions > button,
+html[data-workspace-theme="dark"] .workspace-theme-toggle,
+html[data-workspace-theme="dark"] .project-editor-list button,
+html[data-workspace-theme="dark"] .inbox-actions button {
+  border-color: #526177;
+  background: #111c2b;
+  color: #edf2f7;
+}
+
+html[data-workspace-theme="dark"] .admin-row > a {
+  color: #7af0d2;
+}
+
+html[data-workspace-theme="dark"] .account-facts,
+html[data-workspace-theme="dark"] .account-facts p {
+  border-color: #2c394a;
+}
+
+html[data-workspace-theme="dark"] .account-facts span {
+  color: #9dacbd;
+}
+
+html[data-workspace-theme="dark"] .share-actions > button:not(.workspace-theme-toggle),
+html[data-workspace-theme="dark"] .inbox-actions a {
+  border-color: #66e3c4;
+  background: #66e3c4;
+  color: #07111f;
+}
+
+html[data-workspace-theme="dark"] .editor-card > .secondary-button,
+html[data-workspace-theme="dark"] .profile-image-card .secondary-button,
+html[data-workspace-theme="dark"] .secondary-action {
+  border-color: #8da0b5;
+  background: transparent;
+  color: #edf2f7;
+}
+
+html[data-workspace-theme="dark"] .checklist > button > span,
+html[data-workspace-theme="dark"] .skill-editor-list article > b,
+html[data-workspace-theme="dark"] .asset-summary > a,
+html[data-workspace-theme="dark"] .project-list-thumbnail,
+html[data-workspace-theme="dark"] .profile-image-preview {
+  background-color: #1e2a39;
+  color: #66e3c4;
+}
+
+html[data-workspace-theme="dark"] .checklist button.is-done > span {
+  background: #143d34;
+  color: #7af0d2;
+}
+
+html[data-workspace-theme="dark"] .asset-summary > a {
+  color: #edf2f7;
+}
+
+html[data-workspace-theme="dark"] .help-banner,
+html[data-workspace-theme="dark"] .form-lock {
+  background: #332719;
+  color: #ffd79b;
+}
+
+html[data-workspace-theme="dark"] .dash-notice {
+  background: #142334;
+  color: #dce7f3;
+}
+
+html[data-workspace-theme="dark"] .file-picker,
+html[data-workspace-theme="dark"] .inline-thumbnail-upload {
+  border-color: #526177;
+}
+
+html[data-workspace-theme="dark"] .upload-progress > div {
+  background: #263548;
+}
+
+html[data-workspace-theme="dark"] .admin-row-head {
+  background: #0b1421;
+  color: #aebdcb;
+}
+
+html[data-workspace-theme="dark"] .admin-row button {
+  border-color: #526177;
+  background: #162335;
+  color: #edf2f7;
+}
+
+html[data-workspace-theme="dark"] .admin-modal {
+  background: rgba(1, 5, 12, 0.82);
+}
+
+html[data-workspace-theme="dark"] .admin-modal form {
+  border: 1px solid #34445a;
+  background: #131e2d;
+  color: #edf2f7;
+}
+
+html[data-workspace-theme="dark"] .inbox-status.status-new {
+  background: #4a261d;
+  color: #ffb291;
+}
+html[data-workspace-theme="dark"] .inbox-status.status-read {
+  background: #153b33;
+  color: #89efd4;
+}
+html[data-workspace-theme="dark"] .inbox-status.status-archived {
+  background: #293443;
+  color: #bdc8d4;
+}
+
+@media (max-width: 720px) {
+  .admin-v2 > section > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .admin-header-actions,
+  .dashboard-v2 .share-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .admin-header-actions > *,
+  .dashboard-v2 .share-actions > * {
+    flex: 1 1 145px;
+  }
+}

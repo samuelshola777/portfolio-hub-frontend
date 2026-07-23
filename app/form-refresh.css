@@ -1,0 +1,632 @@
+/* Readable, colorful workspace forms shared by dashboard and administration. */
+:root {
+  --form-primary: #167d68;
+  --form-primary-dark: #0d5f50;
+  --form-blue: #315fc7;
+  --form-violet: #7652c7;
+  --form-amber: #d98725;
+  --form-danger: #c34747;
+  --form-surface: #ffffff;
+  --form-soft: #f5f8f5;
+  --form-border: #cbd3ca;
+  --form-text: #172019;
+  --form-muted: #657067;
+  --form-shadow: 0 14px 36px rgba(27, 48, 37, 0.07);
+}
+
+.auth-panel .auth-form {
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  border: 1px solid #d8d1c6;
+  border-top: 4px solid var(--form-primary);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: var(--form-shadow);
+}
+
+.auth-form label > span {
+  color: #3e4942;
+  font-size: 0.78rem;
+}
+.auth-form input {
+  min-height: 52px;
+  border: 1.5px solid var(--form-border);
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 0.9rem;
+}
+.auth-form input:focus {
+  border-color: #26a88b;
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(38, 168, 139, 0.14);
+}
+.auth-form .auth-submit {
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--form-primary), #25a98c, var(--form-blue));
+  box-shadow: 0 10px 24px rgba(22, 125, 104, 0.22);
+  font-size: 0.86rem;
+}
+.auth-form .auth-submit:hover {
+  background: linear-gradient(135deg, var(--form-primary-dark), #1e947b, #294fa8);
+}
+
+.dashboard-v2,
+.admin-v2 {
+  font-size: 16px;
+}
+
+.dashboard-v2 .dash-content,
+.admin-v2 > section {
+  width: 100%;
+  max-width: 1800px;
+  margin-inline: auto;
+}
+
+.dashboard-v2 .editor-card,
+.admin-v2 .editor-card,
+.admin-v2 .admin-directory,
+.dashboard-v2 .enquiries-workspace {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--form-border);
+  background: linear-gradient(145deg, #ffffff 0%, #fbfdfb 100%);
+  box-shadow: var(--form-shadow);
+}
+
+.dashboard-v2 .editor-card::before,
+.admin-v2 .editor-card::before,
+.admin-v2 .admin-directory::before,
+.dashboard-v2 .enquiries-workspace::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--form-primary),
+    #5ad8b8,
+    var(--form-blue),
+    var(--form-violet)
+  );
+  content: "";
+}
+
+.dashboard-v2 .card-heading > span,
+.admin-v2 .card-heading > span,
+.dashboard-v2 .enquiries-heading > div > span {
+  color: var(--form-primary-dark);
+  font-size: 0.73rem;
+  font-weight: 750;
+}
+
+.dashboard-v2 .card-heading h2,
+.admin-v2 .card-heading h2 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1;
+}
+
+.dashboard-v2 .card-heading p,
+.admin-v2 .card-heading p,
+.dashboard-v2 .how-card span {
+  color: var(--form-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.dashboard-v2 .editor-card label > span,
+.admin-v2 .editor-card label > span,
+.admin-v2 .admin-directory label span {
+  color: #344038;
+  font-size: 0.82rem;
+  font-weight: 760;
+}
+
+.dashboard-v2 .editor-card label > small,
+.admin-v2 .editor-card label > small,
+.dashboard-v2 .file-name,
+.dashboard-v2 .publish-state {
+  color: #748078;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.dashboard-v2 .editor-card input,
+.dashboard-v2 .editor-card textarea,
+.dashboard-v2 .editor-card select,
+.admin-v2 .editor-card input,
+.admin-v2 .editor-card textarea,
+.admin-v2 .editor-card select,
+.admin-v2 .admin-directory input {
+  min-height: 50px;
+  padding: 0.8rem 0.9rem;
+  border: 1.5px solid var(--form-border);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--form-text);
+  font-size: 0.9rem;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.dashboard-v2 .editor-card textarea,
+.admin-v2 .editor-card textarea {
+  min-height: 112px;
+  line-height: 1.55;
+}
+
+.dashboard-v2 .editor-card input:focus,
+.dashboard-v2 .editor-card textarea:focus,
+.dashboard-v2 .editor-card select:focus,
+.admin-v2 .editor-card input:focus,
+.admin-v2 .editor-card textarea:focus,
+.admin-v2 .editor-card select:focus,
+.admin-v2 .admin-directory input:focus {
+  border-color: #26a88b;
+  box-shadow: 0 0 0 4px rgba(38, 168, 139, 0.14);
+}
+
+.dashboard-v2 .editor-card > button,
+.dashboard-v2 .editor-card form button,
+.dashboard-v2 .dashboard-action,
+.admin-v2 .editor-card > button,
+.admin-v2 .editor-card form button,
+.admin-v2 .dashboard-action {
+  min-height: 49px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--form-primary), #25a98c);
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(22, 125, 104, 0.2);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.dashboard-v2 .editor-card > button:hover:not(:disabled),
+.dashboard-v2 .editor-card form button:hover:not(:disabled),
+.dashboard-v2 .dashboard-action:hover:not(:disabled),
+.admin-v2 .editor-card > button:hover:not(:disabled),
+.admin-v2 .editor-card form button:hover:not(:disabled),
+.admin-v2 .dashboard-action:hover:not(:disabled) {
+  box-shadow: 0 11px 24px rgba(22, 125, 104, 0.28);
+  filter: saturate(1.08);
+  transform: translateY(-1px);
+}
+
+.dashboard-v2 .editor-card > .secondary-button,
+.dashboard-v2 .editor-card form .secondary-button,
+.admin-v2 .editor-card > .secondary-button,
+.admin-v2 .editor-card form .secondary-button {
+  border: 1.5px solid #d49a42;
+  background: #fff8eb;
+  color: #8c5613;
+  box-shadow: none;
+}
+
+.dashboard-v2 .simple-list button,
+.dashboard-v2 .grouped-list button,
+.dashboard-v2 .skill-editor-list button,
+.dashboard-v2 .asset-summary button {
+  min-height: 34px;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid #efc0c0;
+  border-radius: 7px;
+  background: #fff1f1;
+  color: #a12f2f;
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.dashboard-v2 .project-editor-list article > div:last-child button {
+  min-height: 35px;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.dashboard-v2 .project-editor-list article > div:last-child button:nth-child(1) {
+  border-color: #b8caf5;
+  background: #eef3ff;
+  color: #264fa9;
+}
+.dashboard-v2 .project-editor-list article > div:last-child button:nth-child(2) {
+  border-color: #a9ddcc;
+  background: #eaf8f3;
+  color: #12634f;
+}
+.dashboard-v2 .project-editor-list article > div:last-child button:nth-child(3) {
+  border-color: #efc0c0;
+  background: #fff1f1;
+  color: #a12f2f;
+}
+
+.dashboard-v2 .simple-list article,
+.dashboard-v2 .grouped-list article,
+.dashboard-v2 .skill-editor-list article,
+.dashboard-v2 .project-editor-list article,
+.dashboard-v2 .asset-summary article {
+  padding: 1rem 0;
+}
+
+.dashboard-v2 .simple-list strong,
+.dashboard-v2 .grouped-list strong,
+.dashboard-v2 .skill-editor-list strong,
+.dashboard-v2 .project-editor-list strong {
+  font-size: 0.95rem;
+}
+
+.dashboard-v2 .simple-list a,
+.dashboard-v2 .grouped-list article span,
+.dashboard-v2 .grouped-list article small,
+.dashboard-v2 .skill-editor-list span,
+.dashboard-v2 .project-editor-list p,
+.dashboard-v2 .project-editor-list small {
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.dashboard-v2 .file-picker,
+.dashboard-v2 .inline-thumbnail-upload,
+.dashboard-v2 .skill-icon-uploader {
+  border: 1.5px dashed #7dbca9;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f2fbf7, #f7f8ff);
+}
+
+.dashboard-v2 .file-picker {
+  padding: 1.15rem;
+}
+
+.dashboard-v2 .file-picker input[type="file"]::file-selector-button,
+.dashboard-v2 .skill-icon-picker input[type="file"]::file-selector-button {
+  margin-right: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border: 0;
+  border-radius: 7px;
+  background: #315fc7;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 750;
+}
+
+.dashboard-v2 .asset-summary > a {
+  padding: 1rem;
+  border: 1px solid #cce5da;
+  background: #edf9f4;
+  font-size: 0.82rem;
+}
+
+.skill-icon-uploader {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.skill-icon-upload-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skill-icon-upload-copy strong {
+  color: #203128;
+  font-size: 0.84rem;
+}
+.skill-icon-upload-copy span {
+  color: #6b776f;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+.skill-icon-upload-body {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.9rem;
+}
+.skill-icon-preview,
+.skill-list-icon {
+  background-color: #e3f6ef;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.skill-icon-preview {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  border: 1px solid #b9d8cd;
+  border-radius: 14px;
+  color: #37715f;
+  font-size: 0.72rem;
+}
+.skill-icon-picker {
+  margin: 0 !important;
+}
+.skill-icon-picker > span {
+  margin-bottom: 0.4rem;
+}
+.skill-icon-upload-button {
+  width: 100%;
+  margin-top: 0.8rem;
+}
+.skill-icon-ready {
+  margin: 0.65rem 0 0;
+  color: #14705a;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+.skill-list-icon {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #c4ddd4;
+  border-radius: 10px;
+}
+.dashboard-v2 .skill-editor-list article {
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+}
+
+.dashboard-v2 .dash-nav nav button strong {
+  font-size: 0.84rem;
+}
+.dashboard-v2 .dash-nav nav button small {
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+.dashboard-v2 .dash-user strong {
+  font-size: 0.86rem;
+}
+.dashboard-v2 .dash-user small {
+  font-size: 0.72rem;
+}
+
+.dashboard-v2 .share-actions,
+.admin-v2 .admin-header-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.dashboard-v2 .share-actions > *,
+.admin-v2 .admin-header-actions > * {
+  min-height: 44px;
+  font-size: 0.77rem;
+}
+
+.dashboard-v2 .share-actions .workspace-theme-toggle,
+.admin-v2 .workspace-theme-toggle {
+  border-color: #9fcdbf;
+  background: #eaf8f3;
+  color: #155f4d;
+}
+
+.admin-layout-switcher {
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.28rem;
+  border: 1px solid #c8d5ce;
+  border-radius: 999px;
+  background: #f0f5f2;
+}
+
+.admin-layout-label {
+  padding: 0 0.55rem;
+  color: #59665e;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.admin-layout-switcher button {
+  min-height: 35px !important;
+  padding: 0.45rem 0.7rem !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #4f5c54 !important;
+  box-shadow: none !important;
+}
+
+.admin-layout-switcher button.is-active {
+  background: linear-gradient(135deg, #315fc7, #7652c7) !important;
+  color: #ffffff !important;
+}
+
+.admin-v2 .admin-metrics article:nth-child(4n + 1) {
+  border-top: 4px solid var(--form-primary);
+  background: linear-gradient(145deg, #ffffff, #effaf6);
+}
+.admin-v2 .admin-metrics article:nth-child(4n + 2) {
+  border-top: 4px solid var(--form-blue);
+  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+}
+.admin-v2 .admin-metrics article:nth-child(4n + 3) {
+  border-top: 4px solid var(--form-violet);
+  background: linear-gradient(145deg, #ffffff, #f6f1ff);
+}
+.admin-v2 .admin-metrics article:nth-child(4n + 4) {
+  border-top: 4px solid var(--form-amber);
+  background: linear-gradient(145deg, #ffffff, #fff7eb);
+}
+.admin-v2 .admin-metrics span {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.admin-v2 .admin-row {
+  min-height: 65px;
+  font-size: 0.82rem;
+}
+.admin-v2 .admin-row strong {
+  font-size: 0.88rem;
+}
+.admin-v2 .admin-row small {
+  font-size: 0.73rem;
+}
+.admin-v2 .admin-row > a {
+  padding: 0.5rem 0.72rem;
+  border-radius: 7px;
+  background: #e8f7f2;
+  color: #12634f;
+  font-size: 0.76rem;
+  text-decoration: none;
+}
+.admin-v2 .admin-activity p,
+.admin-v2 .admin-activity article > span {
+  font-size: 0.78rem;
+}
+
+.dashboard-v2 .enquiries-heading p,
+.dashboard-v2 .enquiry-message {
+  font-size: 0.94rem;
+}
+.dashboard-v2 .enquiry-person h3 {
+  font-size: 1.08rem;
+}
+.dashboard-v2 .inbox-actions button,
+.dashboard-v2 .inbox-actions a {
+  min-height: 38px;
+  font-size: 0.78rem;
+}
+.dashboard-v2 .inbox-actions button:first-child {
+  border-color: #a7ddcb;
+  background: #eaf8f3;
+  color: #12634f;
+}
+.dashboard-v2 .inbox-actions a {
+  border-color: #b8caf5;
+  background: #eef3ff;
+  color: #264fa9;
+}
+.dashboard-v2 .inbox-actions button:last-child {
+  border-color: #efc0c0;
+  background: #fff1f1;
+  color: #a12f2f;
+}
+
+html[data-workspace-theme="dark"] {
+  --form-surface: #142032;
+  --form-soft: #101a29;
+  --form-border: #35465a;
+  --form-text: #edf3f7;
+  --form-muted: #a8b5c3;
+  --form-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+html[data-workspace-theme="dark"] .dashboard-v2 .editor-card,
+html[data-workspace-theme="dark"] .admin-v2 .editor-card,
+html[data-workspace-theme="dark"] .admin-v2 .admin-directory,
+html[data-workspace-theme="dark"] .dashboard-v2 .enquiries-workspace {
+  border-color: var(--form-border);
+  background: linear-gradient(145deg, #142032, #101a29);
+}
+
+html[data-workspace-theme="dark"] .dashboard-v2 .card-heading p,
+html[data-workspace-theme="dark"] .admin-v2 .card-heading p,
+html[data-workspace-theme="dark"] .dashboard-v2 .editor-card label > small,
+html[data-workspace-theme="dark"] .admin-v2 .editor-card label > small,
+html[data-workspace-theme="dark"] .skill-icon-upload-copy span {
+  color: #9eacbc;
+}
+
+html[data-workspace-theme="dark"] .dashboard-v2 .editor-card label > span,
+html[data-workspace-theme="dark"] .admin-v2 .editor-card label > span,
+html[data-workspace-theme="dark"] .skill-icon-upload-copy strong {
+  color: #dce5ec;
+}
+
+html[data-workspace-theme="dark"] .dashboard-v2 .editor-card input,
+html[data-workspace-theme="dark"] .dashboard-v2 .editor-card textarea,
+html[data-workspace-theme="dark"] .dashboard-v2 .editor-card select,
+html[data-workspace-theme="dark"] .admin-v2 .editor-card input,
+html[data-workspace-theme="dark"] .admin-v2 .editor-card textarea,
+html[data-workspace-theme="dark"] .admin-v2 .editor-card select,
+html[data-workspace-theme="dark"] .admin-v2 .admin-directory input {
+  border-color: #40536b;
+  background: #19273a;
+  color: #edf3f7;
+}
+
+html[data-workspace-theme="dark"] .dashboard-v2 .file-picker,
+html[data-workspace-theme="dark"] .dashboard-v2 .inline-thumbnail-upload,
+html[data-workspace-theme="dark"] .dashboard-v2 .skill-icon-uploader {
+  border-color: #397e6e;
+  background: linear-gradient(145deg, #142a28, #19243a);
+}
+html[data-workspace-theme="dark"] .dashboard-v2 .share-actions .workspace-theme-toggle,
+html[data-workspace-theme="dark"] .admin-v2 .workspace-theme-toggle {
+  border-color: #4d6c64;
+  background: #173129;
+  color: #89efd4;
+}
+html[data-workspace-theme="dark"] .admin-layout-switcher {
+  border-color: #41536a;
+  background: #111b2a;
+}
+html[data-workspace-theme="dark"] .admin-layout-label {
+  color: #a5b2c0;
+}
+html[data-workspace-theme="dark"] .admin-layout-switcher button {
+  color: #bcc8d3 !important;
+}
+html[data-workspace-theme="dark"] .admin-v2 .admin-metrics article {
+  border-color: #34465b;
+  background: #142032;
+}
+html[data-workspace-theme="dark"] .admin-v2 .admin-row > a {
+  background: #17372f;
+  color: #87e9ce;
+}
+html[data-workspace-theme="dark"] .dashboard-v2 .asset-summary > a {
+  border-color: #315449;
+  background: #173129;
+  color: #e5f0ec;
+}
+html[data-workspace-theme="dark"] .dashboard-v2 .editor-card > .secondary-button,
+html[data-workspace-theme="dark"] .dashboard-v2 .editor-card form .secondary-button {
+  border-color: #9b7135;
+  background: #332818;
+  color: #f2c47f;
+}
+
+@media (max-width: 920px) {
+  .dashboard-v2 .share-actions,
+  .admin-v2 .admin-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .dashboard-v2 .share-actions > *,
+  .admin-v2 .admin-header-actions > * {
+    flex: 1 1 150px;
+  }
+  .admin-layout-switcher {
+    flex: 1 1 100% !important;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .dashboard-v2 .editor-card,
+  .admin-v2 .editor-card,
+  .dashboard-v2 .enquiries-workspace {
+    padding: 1.1rem;
+  }
+  .dashboard-v2 .card-heading h2,
+  .admin-v2 .card-heading h2 {
+    font-size: 2rem;
+  }
+  .skill-icon-upload-body {
+    grid-template-columns: 1fr;
+  }
+  .skill-icon-preview {
+    width: 68px;
+    height: 68px;
+  }
+}

@@ -1,0 +1,150 @@
+/* Isolated styles for app/not-found.tsx, app/error.tsx and app/global-error.tsx. */
+.error-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 20%, rgba(111, 120, 255, 0.18), transparent 28rem),
+    radial-gradient(circle at 15% 85%, rgba(102, 227, 196, 0.16), transparent 22rem), #f4f0e8;
+  color: #10151f;
+}
+
+.error-page .error-nav {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+  border-bottom: 1px solid rgba(16, 21, 31, 0.16);
+}
+
+.error-page .error-nav > a:last-child {
+  color: #10151f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.error-page .error-card {
+  display: grid;
+  width: min(1120px, 92vw);
+  flex: 1;
+  grid-template-columns: minmax(180px, 0.52fr) minmax(0, 1.48fr);
+  align-items: center;
+  gap: clamp(2rem, 7vw, 7rem);
+  margin: auto;
+  padding: 5rem 0;
+}
+
+.error-page .error-code {
+  color: transparent;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(8rem, 20vw, 18rem);
+  letter-spacing: -0.1em;
+  line-height: 0.7;
+  -webkit-text-stroke: 1px rgba(16, 21, 31, 0.35);
+}
+
+.error-page .error-copy {
+  max-width: 720px;
+}
+.error-page .error-copy h1 {
+  margin: 0.5rem 0 1.3rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(3.7rem, 7vw, 7.4rem);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.82;
+}
+
+.error-page .error-copy > p:not(.auth-kicker) {
+  max-width: 620px;
+  color: #5d625d;
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
+.error-page .error-copy > small {
+  display: block;
+  margin-top: 1.5rem;
+  color: #898c86;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.55rem;
+}
+
+.error-page .error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 2rem;
+}
+
+.error-page .error-actions a,
+.error-page .error-actions button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.1rem;
+  border: 1px solid #10151f;
+  border-radius: 999px;
+  background: #10151f;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.error-page .error-actions .error-secondary-action {
+  background: transparent;
+  color: #10151f;
+}
+.error-page .error-actions a:hover,
+.error-page .error-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.error-page .error-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 4vw;
+  border-top: 1px solid rgba(16, 21, 31, 0.16);
+  color: #6a6e68;
+  font-size: 0.62rem;
+}
+
+.error-page .error-footer a {
+  color: #10151f;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .error-page .error-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 0;
+  }
+  .error-page .error-code {
+    font-size: 8rem;
+  }
+  .error-page .error-copy h1 {
+    font-size: 4rem;
+  }
+  .error-page .error-actions {
+    flex-direction: column;
+  }
+  .error-page .error-actions a,
+  .error-page .error-actions button {
+    width: 100%;
+  }
+  .error-page .error-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

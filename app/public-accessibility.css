@@ -1,0 +1,275 @@
+/* Recruiter-facing readability and controls. Kept separate from global app styles. */
+
+.public-v2.mode-light {
+  --surface: #f4f0e8;
+  --theme-text: #171714;
+  --theme-muted: #555b62;
+  --theme-border: rgba(23, 23, 20, 0.24);
+  --theme-panel: rgba(255, 255, 255, 0.48);
+  --theme-panel-strong: #e6ded1;
+  background-color: var(--surface);
+  color: var(--theme-text);
+}
+
+.public-v2.mode-dark {
+  --surface: #07111f;
+  --theme-text: #f7f3ea;
+  --theme-muted: #b6c0cc;
+  --theme-border: rgba(255, 255, 255, 0.17);
+  --theme-panel: rgba(255, 255, 255, 0.055);
+  --theme-panel-strong: #111d31;
+  background-color: var(--surface);
+  color: var(--theme-text);
+}
+
+.public-v2.mode-light .public-nav,
+.public-v2.mode-dark .public-nav {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+}
+
+.public-v2.mode-dark.theme-editorial .public-nav {
+  border-bottom-color: var(--theme-border);
+}
+.public-v2.mode-dark.theme-editorial .public-portrait {
+  border-color: var(--theme-text);
+}
+.public-v2.mode-dark.theme-editorial .public-footer {
+  border-top-color: var(--theme-border);
+}
+
+.public-v2 .public-nav-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.public-v2 .public-color-mode-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.62rem 0.78rem;
+  border: 1px solid var(--theme-border);
+  border-radius: 999px;
+  background: var(--theme-panel);
+  color: var(--theme-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.public-v2 .public-color-mode-button span {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.public-v2 .public-brand strong {
+  font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+}
+.public-v2 .public-brand span {
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+.public-v2 .public-nav > nav a {
+  padding: 0.55rem 0.2rem;
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+.public-v2 .public-theme-switcher > span {
+  font-size: 0.62rem;
+}
+.public-v2 .public-theme-switcher button,
+.public-v2 .public-copy-button {
+  min-height: 40px;
+  font-size: 0.68rem;
+}
+
+.public-v2 .availability {
+  gap: 0.65rem;
+  padding: 0.72rem 0.95rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.public-v2 .public-hero-copy > p:not(.availability) {
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+}
+.public-v2 .public-hero blockquote {
+  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+}
+
+.public-v2 .public-actions,
+.public-v2 .public-links {
+  gap: 0.7rem;
+}
+
+.public-v2 .public-actions a,
+.public-v2 .public-actions button {
+  min-height: 50px;
+  padding: 0.78rem 1rem;
+  font-size: 0.76rem;
+}
+
+.public-v2 .public-links a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding: 0.62rem 0.8rem;
+  border: 1px solid var(--theme-border);
+  border-radius: 999px;
+  color: var(--theme-text);
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.public-v2 .public-links a:hover,
+.public-v2 .public-links a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.public-v2 .case-body > p,
+.public-v2 .case-details p,
+.public-v2 .background-group p,
+.public-v2 .repo-grid p,
+.public-v2 .public-contact > div > span {
+  font-size: 0.78rem;
+}
+
+.public-v2 .case-links a,
+.public-v2 .background-group a {
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.cv-dialog {
+  position: fixed;
+  z-index: 120;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(3, 8, 16, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.cv-dialog > div {
+  display: grid;
+  width: min(1080px, 96vw);
+  height: min(900px, 92vh);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  overflow: hidden;
+  border: 1px solid var(--theme-border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--theme-text);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.38);
+}
+
+.cv-dialog header,
+.cv-dialog footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.cv-dialog header p {
+  margin: 0 0 0.15rem;
+  color: var(--theme-muted);
+  font-size: 0.68rem;
+}
+.cv-dialog header strong {
+  font-size: 0.9rem;
+}
+.cv-dialog header button {
+  border: 0;
+  background: transparent;
+  color: var(--theme-text);
+  cursor: pointer;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+.cv-dialog iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: white;
+}
+.cv-dialog footer {
+  border-top: 1px solid var(--theme-border);
+  border-bottom: 0;
+}
+.cv-dialog footer span {
+  color: var(--theme-muted);
+  font-size: 0.72rem;
+}
+.cv-dialog footer a {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .public-v2 .public-nav {
+    grid-template-columns: 1fr;
+  }
+  .public-v2 .public-brand {
+    display: flex;
+  }
+  .public-v2 .public-nav-actions {
+    justify-content: flex-start;
+  }
+  .public-v2 .public-theme-switcher {
+    order: 1;
+  }
+  .public-v2 .public-copy-button {
+    order: 2;
+  }
+  .public-v2 .public-color-mode-button {
+    order: 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .public-v2 .public-nav-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .public-v2 .public-theme-switcher {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+  .public-v2 .public-copy-button,
+  .public-v2 .public-color-mode-button {
+    justify-content: center;
+  }
+  .public-v2 .public-actions a,
+  .public-v2 .public-actions button {
+    flex: 1 1 145px;
+    justify-content: center;
+  }
+  .cv-dialog {
+    padding: 0;
+  }
+  .cv-dialog > div {
+    width: 100vw;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+  .cv-dialog footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .cv-dialog footer a {
+    text-align: center;
+  }
+}
